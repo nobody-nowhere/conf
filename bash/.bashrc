@@ -45,8 +45,18 @@ stty -ixon
 # Note: bind used instead of sticking these in .inputrc
 if [[ $iatest > 0 ]]; then bind "set completion-ignore-case on"; fi
 
+edit() {
+	nvim $@ || vim $@ 
+}
+
+sedit() {
+	sudo nvim $@ || sudo vim $@ 
+}
+
 # Show auto-completion list automatically, without double tab
 if [[ $iatest > 0 ]]; then bind "set show-all-if-ambiguous On"; fi
+alias e=edit
+alias se=sedit
 
 # Set the default editor
 alias pico='edit'
