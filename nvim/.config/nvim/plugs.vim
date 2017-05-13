@@ -5,13 +5,15 @@ call plug#begin('~/.config/nvim/plugins')
 	Plug 'Shougo/neoinclude.vim'
 	Plug 'Shougo/neosnippet.vim'
 	Plug 'Shougo/neosnippet-snippets'
-	Plug 'zchee/deoplete-clang'
-	let g:ale_emit_conflict_warnings = 0
 	Plug 'neomake/neomake'
-	Plug 'sheerun/vim-polyglot'
+	" Plug 'sheerun/vim-polyglot'
 	Plug 'Konfekt/FastFold'
 	" Plug 'jsfaint/gen_tags.vim' 
 	Plug 'w0rp/ale'
+
+	Plug 'zchee/deoplete-clang'
+	Plug 'zchee/deoplete-jedi'
+	let g:ale_emit_conflict_warnings = 0
 
 	Plug 'easymotion/vim-easymotion'
 

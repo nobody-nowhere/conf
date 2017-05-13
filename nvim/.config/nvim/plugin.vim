@@ -1,5 +1,6 @@
 let g:airline_powerline_fonts = 1
 let g:airline_theme="ravenpower"
+" let g:polyglot_disabled = ['python']
 
 "" Easy-motion remap
 let g:EasyMotion_do_mapping = 0

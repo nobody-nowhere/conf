@@ -8,7 +8,7 @@ augroup interface
 	autocmd ColorScheme onedark highlight Normal guibg=#090909 ctermbg=232
 augroup END
 colorscheme onedark
-highlight Normal guibg=#090909 ctermbg=232
+" highlight Normal guibg=#090909 ctermbg=232
 " set cursorline
 " set background=dark
 " highlight Normal ctermbg=0
