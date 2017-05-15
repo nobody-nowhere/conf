@@ -132,6 +132,11 @@ alias freshclam='sudo freshclam'
 alias svi='sudo vi'
 alias vis='vim "+set si"'
 
+
+alias gitp='git push origin master'
+alias gitc='git commit -a -m'
+
+
 # Change directory aliases
 alias home='cd ~'
 alias cd..='cd ..'
