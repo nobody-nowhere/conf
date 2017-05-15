@@ -6,7 +6,7 @@ call plug#begin('~/.config/nvim/plugins')
 	Plug 'Shougo/neosnippet.vim'
 	Plug 'Shougo/neosnippet-snippets'
 	Plug 'neomake/neomake'
-	" Plug 'sheerun/vim-polyglot'
+	Plug 'sheerun/vim-polyglot'
 	Plug 'Konfekt/FastFold'
 	" Plug 'jsfaint/gen_tags.vim' 
 	Plug 'w0rp/ale'
