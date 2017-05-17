@@ -69,3 +69,8 @@ map <Leader><C-j> $x
 " so that you can undo CTRL-U after inserting a line break.
 " Revert with ":iunmap <C-U>".
 inoremap <C-U> <C-G>u<C-U>
+
+vmap < <gv
+vmap > >gv
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv

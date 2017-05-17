@@ -114,8 +114,13 @@ alias hlp='less /etc/bash.bashrc_help'
 
 # alias to show the date
 alias da='date "+%Y-%m-%d %A %T %Z"'
-alias absudo='abduco -A sudo sudo su'
+alias abs='abduco -A sudo sudo su'
 alias m='abduco -A m cmus'
+
+
+alias netctl='sudo netctl'
+alias systemctl='sudo systemctl'
+alias adb='sudo adb'
 
 # Alias's to modified commands
 
