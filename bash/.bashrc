@@ -49,6 +49,7 @@ edit() {
 	nvim $@ || vim $@ 
 }
 
+
 sedit() {
 	sudo nvim $@ || sudo vim $@ 
 }
@@ -121,6 +122,8 @@ alias m='abduco -A m cmus'
 alias netctl='sudo netctl'
 alias systemctl='sudo systemctl'
 alias adb='sudo adb'
+alias pip='sudo pip'
+
 
 # Alias's to modified commands
 
@@ -518,6 +521,16 @@ phpconfig ()
 		echo "Error: php.ini file could not be found."
 		echo "Searching for possible locations:"
 		sudo updatedb && locate php.ini
+	fi
+}
+
+cl() {
+	local dir="$1"
+	local dir="${dir:=$HOME}"
+	if [[ -d "$dir" ]]; then
+		cd "$dir" >/dev/null; ls
+	else
+		echo "bash: cl: $dir: Directory not found"
 	fi
 }
 

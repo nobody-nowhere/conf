@@ -55,7 +55,7 @@ local function run_once(cmd_arr)
     end
 end
 
-run_once({ })
+run_once({'xautolock -time 15 -locker ~/.local/bin/locker' })
 -- }}}
 
 -- {{{ Variable definitions
@@ -267,6 +267,11 @@ globalkeys = awful.util.table.join(
         end),
     awful.key({ modkey,           }, "x", function () awful.util.mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
+
+	-- Lock Screen
+    awful.key({ "Control", modkey }, "l", function () awful.spawn("xautolock -locknow") end,
+              {description = "focus the next screen", group = "screen"}),
+
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,

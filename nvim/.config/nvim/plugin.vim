@@ -83,3 +83,6 @@ let g:xml_syntax_folding = 1
 let g:c = 1
 let g:cpp = 1
 let g:fastfold_fold_command_suffixes = []
+
+" Vim-Easy-Align
+vmap <Space><Enter> <Plug>(EasyAlign)
