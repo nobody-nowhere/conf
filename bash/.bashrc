@@ -123,6 +123,7 @@ alias netctl='sudo netctl'
 alias systemctl='sudo systemctl'
 alias adb='sudo adb'
 alias pip='sudo pip'
+alias wifi-menu='sudo wifi-menu'
 
 
 # Alias's to modified commands
