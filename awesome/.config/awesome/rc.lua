@@ -65,7 +65,7 @@ local altkey       = "Mod1"
 local terminal     = "termite" or "urxvt"
 local editor       = "nvim" or "nano" or "vi"
 local gui_editor   = "gvim"
-local browser      = "chromium"
+local browser      = "chromium" or "firefox"
 
 awful.util.terminal = terminal
 awful.util.tagnames = { "1", "2", "3", "4", "5" }
