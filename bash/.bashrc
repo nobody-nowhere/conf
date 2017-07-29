@@ -31,6 +31,7 @@ export HISTSIZE=500
 # Don't put duplicate lines in the history and do not add lines that start with a space
 export HISTCONTROL=erasedups:ignoredups:ignorespace
 
+
 # Check the window size after each command and, if necessary, update the values of LINES and COLUMNS
 shopt -s checkwinsize
 
@@ -115,8 +116,11 @@ alias hlp='less /etc/bash.bashrc_help'
 
 # alias to show the date
 alias da='date "+%Y-%m-%d %A %T %Z"'
+
 alias abs='abduco -A sudo sudo su'
 alias m='abduco -A m cmus'
+alias iCheck='abduco -A iCheck iC'
+alias y5='abduco -A y5 sudo create_ap wu ep Y5 cminusminus'
 
 
 alias netctl='sudo netctl'
@@ -124,6 +128,7 @@ alias systemctl='sudo systemctl'
 alias adb='sudo adb'
 alias pip='sudo pip'
 alias wifi-menu='sudo wifi-menu'
+alias ip='sudo ip'
 
 
 # Alias's to modified commands
@@ -141,11 +146,12 @@ alias multitail='multitail --no-repeat -c'
 alias freshclam='sudo freshclam'
 alias svi='sudo vi'
 alias vis='vim "+set si"'
-
+alias mntd='sudo mount /mnt/d'
+alias mntw='sudo mount /mnt/w'
+alias yd='youtube-dl -o '"'"'/mnt/d/Music/New/%(title)s.%(ext)s'"'"' -x --audio-format mp3 --audio-quality 0'
 
 alias gitp='git push origin master'
 alias gitc='git commit -a -m'
-
 
 # Change directory aliases
 alias home='cd ~'

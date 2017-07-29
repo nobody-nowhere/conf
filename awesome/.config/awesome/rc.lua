@@ -214,7 +214,7 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "Print", function() os.execute("scrot -e 'mv $f ~/Screenshots/'") end),
 
     -- Hotkeys
-    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+    awful.key({ modkey,           }, "F1",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     -- Tag browsing
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
