@@ -1,0 +1,7 @@
+Description='Automatically generated profile by wifi-menu'
+Interface=wp
+Connection=wireless
+Security=wpa
+ESSID=Y5
+IP=dhcp
+Key=cminusminus

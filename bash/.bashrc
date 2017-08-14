@@ -1,21 +1,21 @@
 #!/bin/bash
 iatest=$(expr index "$-" i)
 
-#######################################################
-# SOURCED ALIAS'S AND SCRIPTS
-#######################################################
+# #######################################################
+# # SOURCED ALIAS'S AND SCRIPTS
+# #######################################################
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
+# # Source global definitions
+# if [ -f /etc/bashrc ]; then
+# 	. /etc/bashrc
+# fi
 
-# Enable bash programmable completion features in interactive shells
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-	. /usr/share/bash-completion/bash_completion
-elif [ -f /etc/bash_completion ]; then
-	. /etc/bash_completion
-fi
+# # Enable bash programmable completion features in interactive shells
+# if [ -f /usr/share/bash-completion/bash_completion ]; then
+# 	. /usr/share/bash-completion/bash_completion
+# elif [ -f /etc/bash_completion ]; then
+# 	. /etc/bash_completion
+# fi
 
 #######################################################
 # EXPORTS
@@ -33,10 +33,10 @@ export HISTCONTROL=erasedups:ignoredups:ignorespace
 
 
 # Check the window size after each command and, if necessary, update the values of LINES and COLUMNS
-shopt -s checkwinsize
+# shopt -s checkwinsize
 
 # Causes bash to append to history instead of overwriting it so if you start a new terminal, you have old session history
-shopt -s histappend
+# shopt -s histappend
 PROMPT_COMMAND='history -a'
 
 # Allow ctrl-S for history navigation (with ctrl-R)
@@ -44,7 +44,7 @@ stty -ixon
 
 # Ignore case on auto-completion
 # Note: bind used instead of sticking these in .inputrc
-if [[ $iatest > 0 ]]; then bind "set completion-ignore-case on"; fi
+# if [[ $iatest > 0 ]]; then bind "set completion-ignore-case on"; fi
 
 edit() {
 	nvim $@ || vim $@ 
@@ -56,7 +56,7 @@ sedit() {
 }
 
 # Show auto-completion list automatically, without double tab
-if [[ $iatest > 0 ]]; then bind "set show-all-if-ambiguous On"; fi
+# if [[ $iatest > 0 ]]; then bind "set show-all-if-ambiguous On"; fi
 alias e=edit
 alias se=sedit
 
@@ -91,7 +91,6 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 # alias SERVERNAME='ssh YOURWEBSITE.com -l USERNAME -p PORTNUMBERHERE'
 
 # Alias's to change the directory
-alias web='cd /var/www/html'
 
 # Alias's to mount ISO files
 # mount -o loop /home/NAMEOFISO.iso /home/ISOMOUNTDIR/
@@ -118,17 +117,19 @@ alias hlp='less /etc/bash.bashrc_help'
 alias da='date "+%Y-%m-%d %A %T %Z"'
 
 alias abs='abduco -A sudo sudo su'
-alias m='abduco -A m cmus'
-alias iCheck='abduco -A iCheck iC'
-alias y5='abduco -A y5 sudo create_ap wu ep Y5 cminusminus'
+alias m='mntd; abduco -A m cmus'
+alias iCheck='abduco -n -A iCheck iC'
+alias y5='abduco -A WaiFai sudo create_ap wu ep WaiFai wayifive'
 
 
+alias rstnet='sudo systemctl restart systemd-networkd'
 alias netctl='sudo netctl'
 alias systemctl='sudo systemctl'
 alias adb='sudo adb'
 alias pip='sudo pip'
 alias wifi-menu='sudo wifi-menu'
 alias ip='sudo ip'
+alias ipa='sudo ip a'
 
 
 # Alias's to modified commands
@@ -571,6 +572,17 @@ rot13 () {
 	else
 		echo $* | tr '[a-m][n-z][A-M][N-Z]' '[n-z][a-m][N-Z][A-M]'
 	fi
+}
+
+motd()
+{
+	curl -s --connect-timeout 5 -A 'chrome' 'https://www.reddit.com/r/quotes/top.json?sort=top&t=week&limit=100' | \
+	python2.7 -c 'import sys, random, json; randnum = random.randint(0,99); response = json.load(sys.stdin)["data"]["children"][randnum]["data"]; print response["title"].encode('"'"'ascii'"'"'); print "\n\n";'
+}
+
+motdupdate()
+{
+	motd | sudo tee /etc/motd
 }
 
 # Trim leading and trailing spaces (for scripts)

@@ -1,0 +1,7 @@
+Description='Automatically generated profile by wifi-menu'
+Interface=wp
+Connection=wireless
+Security=wpa
+ESSID=students
+IP=dhcp
+Key=students123

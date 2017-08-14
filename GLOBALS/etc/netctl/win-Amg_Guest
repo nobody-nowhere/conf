@@ -1,0 +1,7 @@
+Description='Automatically generated profile by wifi-menu'
+Interface=win
+Connection=wireless
+Security=wpa
+ESSID=Amg_Guest
+IP=dhcp
+Key=Access2016

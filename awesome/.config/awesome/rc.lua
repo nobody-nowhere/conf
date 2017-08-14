@@ -308,7 +308,7 @@ globalkeys = awful.util.table.join(
     awful.key({ altkey, "Control" }, "-", function () lain.util.useless_gaps_resize(-1) end),
 
     -- Dynamic tagging
-    awful.key({ modkey, "Shift" }, "n", function () lain.util.add_tag() end),
+    awful.key({ modkey, "Control" }, "n", function () lain.util.add_tag() end),
     awful.key({ modkey, "Shift" }, "r", function () lain.util.rename_tag() end),
     awful.key({ modkey, "Shift" }, "Left", function () lain.util.move_tag(-1) end),  -- move to previous tag
     awful.key({ modkey, "Shift" }, "Right", function () lain.util.move_tag(1) end),  -- move to next tag
@@ -339,7 +339,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
 
-    awful.key({ modkey, "Control" }, "n",
+    awful.key({ modkey, "Shift" }, "n",
               function ()
                   local c = awful.client.restore()
                   -- Focus restored client

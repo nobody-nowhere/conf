@@ -1,0 +1,9 @@
+Description='Automatically generated profile by wifi-menu'
+Interface=wp
+Connection=wireless
+Security=wpa
+ESSID=WaiFai
+IP=static
+Address=10.0.0.1/24
+Gateway=10.0.0.100
+Key=wayifive

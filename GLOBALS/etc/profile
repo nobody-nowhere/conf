@@ -29,4 +29,5 @@ unset MANPATH
 
 if [ $(basename $(tty)) == 'tty1' ]; then
 	startx
+	mntd
 fi
