@@ -1,3 +1,3 @@
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="1c:b7:2c:03:ec:bc", NAME="ep"
 SUBSYSTEM=="net", ATTR{address}=="", NAME="wp"
-SUBSYSTEM=="net", ATTR{address}=="", NAME="wu"
+SUBSYSTEM=="net", ATTR{address}=="00:22:75:75:db:07", NAME="wu"

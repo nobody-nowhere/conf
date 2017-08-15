@@ -99,15 +99,15 @@ local clock = lain.widget.watch({
     end
 })
 
--- Calendar
-theme.cal = lain.widget.calendar({
-    attach_to = { clock.widget },
-    notification_preset = {
-        font = "xos4 Terminus 10",
-        fg   = theme.fg_normal,
-        bg   = theme.bg_normal
-    }
-})
+-- -- Calendar
+-- theme.cal = lain.widget.calendar({
+--     attach_to = { clock.widget },
+--     notification_preset = {
+--         font = "xos4 Terminus 10",
+--         fg   = theme.fg_normal,
+--         bg   = theme.bg_normal
+--     }
+-- })
 
 -- Mail IMAP check
 local mailicon = wibox.widget.imagebox(theme.widget_mail)
