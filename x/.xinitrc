@@ -34,8 +34,9 @@ fi
 # Turn on numlock
 numlockx &
 
-xrandr --dpi 96
-xrandr --setprovideroutputsource modesetting NVIDIA-0&
-xrandr --auto&
+# xrandr --dpi 96
+# xrandr --setprovideroutputsource modesetting NVIDIA-0&
+# xrandr --auto&
+xset dpms 0 0 0 && xset s noblank && xset s off
 
 exec awesome

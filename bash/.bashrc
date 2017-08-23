@@ -135,13 +135,16 @@ alias ipa='sudo ip a'
 # Alias's to modified commands
 
 alias mv='mv -i'
+alias rsync='rsync -Ph'
 alias rm='rm -v'
 alias mkdir='mkdir -p'
 alias ps='ps auxf'
 alias ping='ping -c 10'
 alias less='less -R'
 alias cls='clear'
-alias pacman='sudo pacman'
+_completion_loader pacman
+complete -o default -o nospace -F _pacman pm
+alias pm='sudo pacman -Sy'
 alias apt='sudo apt'
 alias multitail='multitail --no-repeat -c'
 alias freshclam='sudo freshclam'
@@ -150,7 +153,7 @@ alias reboot='sudo reboot'
 alias vis='vim "+set si"'
 alias mntd='sudo mount /mnt/d'
 alias mntw='sudo mount /mnt/w'
-alias yd='youtube-dl -o '"'"'/mnt/d/Music/New/%(title)s.%(ext)s'"'"' -x --audio-format mp3 --audio-quality 0'
+alias yd='youtube-dl -o '"'"'/mnt/d/Music/%(title)s.%(ext)s'"'"' -x --audio-format mp3 --audio-quality 0'
 alias netre='systemctl restart dhcpcd@ep'
 
 alias gitp='git push origin master'
@@ -172,7 +175,7 @@ alias rmd='/bin/rm  --recursive --force --verbose '
 
 # Alias's for multiple directory listing commands
 alias la='ls -Alh' # show hidden files
-alias ls='ls -aFh --color=auto' # add colors and file type extensions
+alias ls='ls -Fh --color=auto' # add colors and file type extensions
 alias lx='ls -lXBh' # sort by extension
 alias lk='ls -lSrh' # sort by size
 alias lc='ls -lcrh' # sort by change time
