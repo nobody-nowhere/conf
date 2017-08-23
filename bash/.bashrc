@@ -153,6 +153,7 @@ alias reboot='sudo reboot'
 alias vis='vim "+set si"'
 alias mntd='sudo mount /mnt/d'
 alias mntw='sudo mount /mnt/w'
+alias ejectall='for i in /mnt/*; do sudo umount $i; done;'
 alias yd='youtube-dl -o '"'"'/mnt/d/Music/%(title)s.%(ext)s'"'"' -x --audio-format mp3 --audio-quality 0'
 alias netre='systemctl restart dhcpcd@ep'
 
