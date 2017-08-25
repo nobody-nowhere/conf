@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-sudo rsync -aAXvPr /* /mnt/1 --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/var/tmp/*,/run/*,/mnt/*,/media/*,/lost+found,/var,/home/g/Downloads,/boot,'*.cache*'}
+sudo rsync -aAXvPr /* /mnt/1 --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/tmp,/var/tmp/*,/run/*,/mnt/*,/media/*,/lost+found,/var,/home/g/Downloads,/boot,'*.cache*'}

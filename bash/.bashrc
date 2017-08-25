@@ -144,6 +144,7 @@ alias less='less -R'
 alias cls='clear'
 _completion_loader pacman
 complete -o default -o nospace -F _pacman pm
+alias pacman='sudo pacman'
 alias pm='sudo pacman -Sy'
 alias apt='sudo apt'
 alias multitail='multitail --no-repeat -c'
