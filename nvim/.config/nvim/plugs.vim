@@ -8,6 +8,7 @@ call plug#begin('~/.config/nvim/plugins')
 	Plug 'neomake/neomake'
 	Plug 'sheerun/vim-polyglot'
 	Plug 'Konfekt/FastFold'
+	Plug 'sbdchd/neoformat'
 	" Plug 'jsfaint/gen_tags.vim' 
 	Plug 'w0rp/ale'
 
@@ -18,7 +19,8 @@ call plug#begin('~/.config/nvim/plugins')
 	Plug 'easymotion/vim-easymotion'
 
 	Plug 'junegunn/vim-easy-align'
-	Plug 'tpope/vim-commentary'
+	Plug 'tomtom/tcomment_vim'
+	" Plug 'tpope/vim-commentary'
 	" Plug 'c0r73x/neotags.nvim'
 
 	Plug 'vim-airline/vim-airline'
@@ -26,7 +28,7 @@ call plug#begin('~/.config/nvim/plugins')
 
 	Plug 'vim-airline/vim-airline-themes'
 	" Plug 'chriskempson/base16-vim'
-	Plug 'MaxSt/FlatColor'
+	" Plug 'MaxSt/FlatColor'
 	" Plug 'mhinz/vim-janah'
 	Plug 'joshdick/onedark.vim'
 

@@ -108,7 +108,7 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Edit this .bashrc file
-alias ebrc='sudo edit /etc/bash.bashrc'
+alias ebrc='e ~/.bashrc'
 
 # Show help for this .bashrc file
 alias hlp='less /etc/bash.bashrc_help'
@@ -116,20 +116,26 @@ alias hlp='less /etc/bash.bashrc_help'
 # alias to show the date
 alias da='date "+%Y-%m-%d %A %T %Z"'
 
+
 alias abs='abduco -A sudo sudo su'
 alias m='mntd; abduco -A m cmus'
 alias iCheck='abduco -n -A iCheck iC'
-alias y5='abduco -A WaiFai sudo create_ap wu ep WaiFai wayifive'
+alias y5='abduco -A WaiFai sudo create_ap --hidden --no-virt --dhcp-dns 8.8.8.8,8.8.4.4 wu ep WaiFai wayifive'
+alias envim='e ~/.config/nvim/'
 
 
 alias rstnet='sudo systemctl restart systemd-networkd'
 alias netctl='sudo netctl'
 alias systemctl='sudo systemctl'
+alias srestart='sudo systemctl restart'
+alias status='sudo systemctl status'
 alias adb='sudo adb'
 alias pip='sudo pip'
 alias wifi-menu='sudo wifi-menu'
+alias wireshark='sudo wireshark'
 alias ip='sudo ip'
 alias ipa='sudo ip a'
+alias asdr='sudo systemctl restart asd-resync'
 
 
 # Alias's to modified commands
@@ -142,22 +148,27 @@ alias ps='ps auxf'
 alias ping='ping -c 10'
 alias less='less -R'
 alias cls='clear'
-_completion_loader pacman
-complete -o default -o nospace -F _pacman pm
+# _completion_loader pacman
+# complete -o default -o nospace -F _pacman pm
 alias pacman='sudo pacman'
+alias pac='pacaur -a -Sy'
 alias pm='sudo pacman -Sy'
+alias pmu='sudo pacman -Syu'
 alias apt='sudo apt'
 alias multitail='multitail --no-repeat -c'
 alias freshclam='sudo freshclam'
 alias svi='sudo vi'
 alias reboot='sudo reboot'
 alias vis='vim "+set si"'
-alias mntd='sudo mount /mnt/d'
+alias mntd='sudo mount UUID=01D28536070A2800'
 alias mntw='sudo mount /mnt/w'
 alias ejectall='for i in /mnt/*; do sudo umount $i; done;'
 alias yd='youtube-dl -o '"'"'/mnt/d/Music/%(title)s.%(ext)s'"'"' -x --audio-format mp3 --audio-quality 0'
+alias ysync='yd -w $(cat /mnt/d/Backup/videos.txt)'
 alias netre='systemctl restart dhcpcd@ep'
+alias eat='eatmydata'
 
+alias clone='git clone'
 alias gitp='git push origin master'
 alias gitc='git commit -a -m'
 
@@ -247,7 +258,11 @@ alias sha1='openssl sha1'
 #######################################################
 # SPECIAL FUNCTIONS
 #######################################################
+function secho	{
+	(echo -e "$@" && cat) }
 
+function faketty {
+	script -qfc "$(printf "%q " "$@")" /dev/null; }
 # Extracts any archive(s) (if unp isn't installed)
 extract () {
 	for archive in $*; do

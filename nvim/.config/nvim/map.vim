@@ -23,9 +23,9 @@ nnoremap <A-l> <C-w>l
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 " Force write! If you're not logged in as sudo
-cmap fw w !sudo tee % >/dev/null
+cmap fw w !sudo tee % >/dev/null <CR> <Space>q
 
-nnoremap j gj
+noremap j gj
 nnoremap k gk
 
 " SPACE IS THE LEADER!
